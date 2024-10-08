@@ -1,0 +1,65 @@
+.api-visualization {
+    text-align: center;
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .flow-item {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .arrow {
+    font-size: 24px;
+    color: #888;
+  }
+  
+  /* Loading State */
+  .loading {
+    background-color: #f1c40f; /* Yellow for loading */
+    animation: pulse 1s infinite;
+  }
+  
+  /* Success State */
+  .success {
+    background-color: #2ecc71; /* Green for success */
+    transform: scale(1.05);
+  }
+  
+  /* Error State */
+  .error {
+    background-color: #e74c3c; /* Red for error */
+    transform: scale(1.05);
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  /* Animation for loading state */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

@@ -1,5 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+app.use(cors()); // Enable CORS
 app.use(express.json());
 
 let dataStore = []; // Example data store
@@ -8,14 +11,16 @@ let dataStore = []; // Example data store
 app.post('/api/post', (req, res) => {
   const { userId, name } = req.body;
 
-  // You can validate or manipulate data here
+  // Log the incoming data
+  console.log('Received POST data:', req.body);
+
   if (!userId || !name) {
     return res.status(400).json({ message: 'User ID and Name are required.' });
   }
 
   // Store data in memory (or a database)
   dataStore.push({ userId, name });
-  res.status(201).json({ message: 'Data submitted successfully.', data: { userId, name } });
+  return res.status(201).json({ message: 'Data submitted successfully.', data: { userId, name } });
 });
 
 // GET endpoint
